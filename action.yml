@@ -12,4 +12,5 @@ outputs:
     description: 'Merge complete'
 runs:
   using: 'docker'
+  image: 'Dockerfile'
   main: 'merge_report.pl'
