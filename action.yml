@@ -1,13 +1,15 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'App CI Merge bot'
+description: 'Automatic merges for a Gitflow workflow'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  slack-url:  
+    description: 'The slack workflow URL to notify a channel'
     required: true
-    default: 'World'
+  slack-channel:  
+    description: 'The channel to notify'
+    required: false
 outputs:
   time: # id of output
-    description: 'The time we greeted you'
+    description: 'Merge complete'
 runs:
-  using: 'node12'
+  using: 'ubuntu-latest'
   main: 'merge_report.pl'
