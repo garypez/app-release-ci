@@ -11,5 +11,5 @@ outputs:
   time: # id of output
     description: 'Merge complete'
 runs:
-  using: 'ubuntu-latest'
+  using: 'docker'
   main: 'merge_report.pl'
