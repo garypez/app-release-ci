@@ -1,8 +1,7 @@
 # Container image that runs your code
-FROM alpine:3.10
+FROM perl:5.26
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+WORKDIR /action
+COPY merge_report.pl /action/
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+#CMD ["perl", "/action/merge_report.pl"]
