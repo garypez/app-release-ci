@@ -13,5 +13,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: perl ${{ github.action_path }}/merge_report.pl ${{ inputs.slack-url }} ${{ inputs.slack-channel }} merge-only
+    - run: echo "perl ${{ github.action_path }}/merge_report.pl ${{ inputs.slack-url }} ${{ inputs.slack-channel }} mergeOnly"
+      shell: bash
+    - run: perl ${{ github.action_path }}/merge_report.pl ${{ inputs.slack-url }} ${{ inputs.slack-channel }} mergeOnly
       shell: bash
