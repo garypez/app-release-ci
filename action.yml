@@ -11,6 +11,7 @@ outputs:
   time: # id of output
     description: 'Merge complete'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  main: 'merge_report.pl'
+  using: "composite"
+  steps:
+    - run: perl ${{ github.action_path }}/merge_report.pl
+      shell: bash
