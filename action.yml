@@ -13,7 +13,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo "perl ${{ github.action_path }}/merge_report.pl ${{ inputs.slack-url }} ${{ inputs.slack-channel }} mergeOnly"
+    - run: git config user.email "app-release-ci@noreply.com" && git config user.name "App Release CI"
       shell: bash
     - run: perl ${{ github.action_path }}/merge_report.pl ${{ inputs.slack-url }} ${{ inputs.slack-channel }} mergeOnly
       shell: bash
